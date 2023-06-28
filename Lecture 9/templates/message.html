@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML page</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/style.css')}}">
+</head>
+<body>
+    {% with msg=get_flashed_messages() %}
+        {% if msg %}
+            {% for m in msg %}
+                {{m}}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <h1>Hi, Welcome to your account {{name}}</h1>
+</body>
+</html>
